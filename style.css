@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:root{
+    --font-family: 'Poppins', sans-serif;
+    --primary-color: #18c761;
+}
+body{
+    background-color: #252525;
+    display: flex;
+}
+.todo{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    min-height: 80vh;
+    width: 100%;
+}
+.todo__title h1{
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+.todo__form{
+    margin-bottom: 4rem;
+    width: 100%;
+
+    
+    display: flex;
+    justify-content: center;
+}
+.todo__form form{
+    display: flex;
+    width: 50%;
+    position: relative;
+}
+.todo__form form input{
+    flex: 1;
+    background: transparent;
+    border: 4px solid #555555;
+    padding: 8px 16px;
+    font-size: 1.10rem;
+    height: 3rem;
+    border-radius: 10px;
+    color: #e8e8e8;
+    font-family: var(--font-family);
+    transition: all 0.25s ease-in-out;
+}
+.todo__form form input:focus{
+    outline: none;
+    border: 4px solid var(--primary-color);
+}
+
+.todo__form form button{
+    flex: 0.2;
+    height: 3rem;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border: none;
+    padding: 8px 32px;
+    font-family: var(--font-family);
+    font-weight: bold;
+    background-color: #2de479;
+    color: #252525;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.todo__form form button:hover{
+    background-color: var(--primary-color);
+}
+.todo__form button:active{
+    transform: scale(0.98);
+}
+.todo__list{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo__list ul{
+    list-style: none;
+    width: 80%;
+}
+.todo__list ul li{
+    background-color: #464646;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    position: relative;
+    padding: 16px 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.todo__list ul li label:nth-child(3){
+    font-family: var(--font-family);
+    color: #e8e8e8;
+    flex: 1;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.todo__list ul li button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.todo__list ul li button svg{
+    width: 40px;
+    height: 40px;
+    transition: all 0.25s ease-in-out;
+}
+.todo__list ul li button svg:hover{
+    fill: rgb(167, 20, 20);
+}
+.custom-checkbox{
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transition: all 0.25s ease-in-out;
+}
+.custom-checkbox svg{
+    transition: all 0.25s ease-in-out;
+}
+.input:checked ~ .custom-checkbox{
+    background-color: var(--primary-color);
+}
+.input:checked ~ .custom-checkbox svg{
+    fill: #252525;
+}
+.label-2{
+    transition: all 0.25s ease-in-out;
+}
+.input:checked ~ .label-2{
+    text-decoration: line-through;
+    color: #8f8f8f;
+}
+.input{
+    display: none;
+}
+
+/* resppnsove section */
+@media screen and (max-width: 900px){
+    .todo__title h1{
+        font-size: 3rem;
+    }
+    .todo__form{
+        margin-bottom: 2rem;
+    }
+    .todo__form form{
+        width: 90%;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .todo__form form input{
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+    .todo__form form button{
+        position: static;
+        border-radius: 10px;
+    }
+    .todo__list{
+        width: 100%;
+    }
+    .todo__list ul{
+        width: 90%;
+    }
+    .todo__list ul li{
+        padding: 8px 24px;
+    }
+    
+    .label-2{
+        font-size: 13px;
+    }
+}
+@media screen and (max-width: 500px){
+    .todo__title h1{
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    .todo__form form{
+        width: 85%;
+        gap: 1rem;
+    }
+    .todo__list ul li button svg{
+        width: 25px;
+        height: 25px;
+    }
+    .custom-checkbox{
+        width: 25px;
+        height: 25px;
+    }
+    .label-2{
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+}
