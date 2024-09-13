@@ -188,6 +188,15 @@ body{
     .label-2{
         font-size: 13px;
     }
+    .todo__list ul li button svg{
+    width: 25px;
+    height: 25px;
+    transition: all 0.25s ease-in-out;
+    }
+    .custom-checkbox{
+        width: 20px;
+        height: 20px;
+    }
 }
 @media screen and (max-width: 500px){
     .todo__title h1{
